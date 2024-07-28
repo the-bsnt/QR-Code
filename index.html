@@ -33,12 +33,9 @@
           );
         }
       }
-
-      // Function to display JSON data in the HTML
       // Function to display JSON data in the HTML
       function displayJson(data) {
         const jsonDataDiv = document.getElementById("json_data");
-
         // Loop through each object in the data array
         const htmlContent = data
           .map((person) => {
@@ -49,14 +46,11 @@
         <img class="profile" src="${person.idd}"></img>`;
           })
           .join("");
-
         // Set the innerHTML of the div to the generated HTML content
         jsonDataDiv.innerHTML = htmlContent;
       }
-
       // Fetch and display the JSON data when the page loads
       document.addEventListener("DOMContentLoaded", fetchJson);
-
       // Fetch and display the JSON data when the page loads
       document.addEventListener("DOMContentLoaded", fetchJson);
     </script>
