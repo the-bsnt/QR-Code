@@ -1,7 +1,5 @@
 import qrcode
 import qrcode.constants
-from PIL import Image
-virat_img = Image.open("Kholi_image.jpg")
 
 
 profile = {
@@ -11,7 +9,7 @@ profile = {
     "country": "India",
     "phone": "1234567890",
     "email": "virat@gmail.com",
-    "img": "http://127.0.0.1:5500/index.html"
+    "img": "http://167.71.229.99:8000/",
 }
 
 features = qrcode.QRCode(
@@ -20,6 +18,6 @@ features = qrcode.QRCode(
 features.add_data(profile)
 features.make(fit=True)
 
-img = features.make_image(fill_color="red", back_color="white")
+img = features.make_image(fill_color="black", back_color="white")
 
-img.save("kholi.png")
+img.save("kholi_qr.png")

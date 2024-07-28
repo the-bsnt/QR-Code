@@ -5,15 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virat Kholi</title>
     <style>
-      .kholi {
+      .profile {
         height: 500px;
-        width: 800px;
-        background-image: url("Kholi_image.jpg");
-        background-size: cover;
+        width: 500px;
+        border-radius: 50%;
       }
     </style>
   </head>
   <body>
-    <div class="kholi"></div>
+    <div id="json_data"></div>
+    <script>
+      // Function to fetch JSON data
+      async function fetchJson() {
+        try {
+          const response = await fetch("kholi.json"); // Replace 'kholi.json' with the path to your JSON file
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          const data = await response.json();
+          displayJson(data);
+        } catch (error) {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
+        }
+      }
+
+      // Function to display JSON data in the HTML
+      // Function to display JSON data in the HTML
+      function displayJson(data) {
+        const jsonDataDiv = document.getElementById("json_data");
+
+        // Loop through each object in the data array
+        const htmlContent = data
+          .map((person) => {
+            return `<p>${person.name} is an esteemed professional cricketer representing the national team of ${person.country}. At the age of ${person.age}, he resides in the vibrant city of ${person.city}, Nepal. His contact details, as per our records, are as follows: <br>
+        <strong>Phone Number:</strong> ${person.phone} <br>
+        <strong>Email:</strong> ${person.email} <br>
+        This renowned athlete continues to inspire fans worldwide with his remarkable skill and dedication to the sport.</p>
+        <img class="profile" src="${person.idd}"></img>`;
+          })
+          .join("");
+
+        // Set the innerHTML of the div to the generated HTML content
+        jsonDataDiv.innerHTML = htmlContent;
+      }
+
+      // Fetch and display the JSON data when the page loads
+      document.addEventListener("DOMContentLoaded", fetchJson);
+
+      // Fetch and display the JSON data when the page loads
+      document.addEventListener("DOMContentLoaded", fetchJson);
+    </script>
   </body>
 </html>

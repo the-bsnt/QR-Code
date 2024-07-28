@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Virat Kohli",
+    "age": 38,
+    "city": "Mumbai",
+    "country": "India",
+    "phone": "+91-9844711251",
+    "email": "the.viratkholi.official@gmail.com",
+    "idd": "Kholi_image.jpg"
+  },
+  {
+    "name": "Basnet Sameer",
+    "age": 21,
+    "city": "Kathmadu",
+    "country": "Nepal",
+    "phone": "+977-9746396217",
+    "email": "the.bsnt.official@gmail.com",
+    "idd": "basnet_.png"
+  }
+]
